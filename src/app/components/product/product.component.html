@@ -1,0 +1,17 @@
+<p>soy un componente</p>
+<h3>Lista de productos</h3>
+
+<table class="my-border">
+    <thead class="my-border">
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Fecha de compra</th>
+    </thead>
+    <tbody>
+        <tr class="my-border" *ngFor="let producto of productos">
+            <td>{{producto.Nombre}}</td>
+            <td>{{producto.Precio | currency}}</td>
+            <td>{{producto.FechaCompra | date}}</td>
+        </tr>
+    </tbody>
+</table>
