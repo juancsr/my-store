@@ -1,17 +1,8 @@
-<p>soy un componente</p>
-<h3>Lista de productos</h3>
-
-<table class="my-border">
-    <thead class="my-border">
-        <th>Nombre</th>
-        <th>Precio</th>
-        <th>Fecha de compra</th>
-    </thead>
-    <tbody>
-        <tr class="my-border" *ngFor="let producto of productos">
-            <td>{{producto.Nombre}}</td>
-            <td>{{producto.Precio | currency}}</td>
-            <td>{{producto.FechaCompra | date}}</td>
-        </tr>
-    </tbody>
-</table>
+<div>
+    <p>soy un componente</p>
+    <h3 appHighlight [color]="'white'">{{producto.Nombre | uppercase}}</h3>
+    Precio: <strong>{{producto.Precio | currency:'EUR'}}</strong><br>
+    Fecha de compra: <strong>{{producto.FechaCompra | date:'dd/MM/yyyy'}}</strong>
+    <p>{{producto.Descripcion | slice:0:10}}</p>
+    <button [routerLink]="['/products', producto.Id]" routerLinkActive="router-link-active">Ver detalle</button>
+</div>

@@ -1,0 +1,45 @@
+<!-- String interpolation -->
+{{ 'Hola mundo' }}
+{{ 1+2 }}
+{{ title }}
+
+<input type="text" [(ngModel)]="title">
+<div [ngSwitch]="title">
+  <div *ngSwitchCase="title === 'Camilo'">{{title}}</div>
+  <div *ngSwitchCase="title === 'Sebastián'">{{title}}</div>
+  <div *ngSwitchCase="title === 'Nataly'">{{title}}</div>
+  <div *ngSwitchDefault>no match for you</div>
+</div>
+
+Exponential pipe: <input type="number" [(ngModel)]="myNumber">
+<label>{{myNumber | exponential | currency}}</label>
+
+<div *ngIf="true">
+  Esto es un div true
+</div>
+
+<div *ngIf="!true">
+  Esto es un div !true
+</div>
+
+<div *ngIf="undefined">
+  Esto es un div undefined
+</div>
+
+<div *ngIf="!undefined">
+  Esto es un div !undefined
+</div>
+
+<ul>
+  <li *ngIf="items.length === 0;">La lista esta vacia</li>
+  <li *ngFor="let i of items; index as x">
+    {{i}}({{x}})
+    <button (click)="deleteItem(x)">Borrar</button>
+  </li>
+</ul>
+
+<label for="id_item">Agregar item</label>
+<input type="text" [(ngModel)]="item"> <br>
+<button (click)="agregarItem()">Agregar</button><br>
+<span style="color:brown">{{helpText}}</span>
+
