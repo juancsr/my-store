@@ -1,8 +1,13 @@
-<div>
-    <p>soy un componente</p>
-    <h3 appHighlight [color]="'white'">{{producto.Nombre | uppercase}}</h3>
-    Precio: <strong>{{producto.Precio | currency:'EUR'}}</strong><br>
-    Fecha de compra: <strong>{{producto.FechaCompra | date:'dd/MM/yyyy'}}</strong>
-    <p>{{producto.Descripcion | slice:0:10}}</p>
-    <button [routerLink]="['/products', producto.Id]" routerLinkActive="router-link-active">Ver detalle</button>
-</div>
+<mat-card>
+    <mat-card-header>{{producto.Nombre | uppercase}}</mat-card-header>
+    <mat-card-subtitle>{{producto.Precio | currency}}</mat-card-subtitle>
+    <mat-card-content>
+        <p>{{producto.Descripcion}}</p>
+    </mat-card-content>
+    <div class="crop-image">
+        aqui va una bella imagen
+    </div>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" [routerLink]="['/products', producto.Id]" routerLinkActive="router-link-active">Ver detalle</button>
+    </mat-card-actions>
+</mat-card>
