@@ -2,7 +2,8 @@ import {
   Component, OnInit, Input, Output,
   EventEmitter, OnChanges, SimpleChanges, DoCheck, OnDestroy
 } from '@angular/core';
-import { ProductModel } from 'src/app/product.model';
+
+import { ProductModel } from '../../../shared/models/product.model';
 
 
 @Component({
