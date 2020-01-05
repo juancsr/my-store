@@ -1,13 +1,13 @@
 <mat-card>
-    <mat-card-header>{{producto.Nombre | uppercase}}</mat-card-header>
-    <mat-card-subtitle>{{producto.Precio | currency}}</mat-card-subtitle>
+    <mat-card-header>{{producto.title | uppercase}}</mat-card-header>
+    <mat-card-subtitle>{{producto.price | currency}}</mat-card-subtitle>
     <mat-card-content>
-        <p>{{producto.Descripcion}}</p>
+        <p>{{producto.description}}</p>
     </mat-card-content>
     <div class="crop-image">
         aqui va una bella imagen
     </div>
     <mat-card-actions>
-        <button mat-raised-button color="primary" [routerLink]="['/products', producto.Id]" routerLinkActive="router-link-active">Ver detalle</button>
+        <button mat-raised-button color="primary" [routerLink]="['/products', producto.id]" routerLinkActive="router-link-active">Ver detalle</button>
     </mat-card-actions>
 </mat-card>

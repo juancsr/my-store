@@ -1,7 +1,10 @@
-<div>
+<div *ngIf="product">
     <ul>
-    <li><strong>Nombre: </strong>{{product.Nombre}}</li>
-    <li><strong>Precio: </strong>{{product.Precio | currency}}</li>
+    <li><strong>Nombre: </strong>{{product.title}}</li>
+    <li><strong>Precio: </strong>{{product.price | currency}}</li>
     </ul>
-    <p>{{product.Descripcion}}</p>
+    <p>{{product.description}}</p>
+    <button (click)="createProduct()">Crear producto</button>
+    <button (click)="updateProduct()">Actualizar producto</button>
+    <button (click)="deleteProduct()">Eliminar producto</button>
 </div>

@@ -1,5 +1,19 @@
-<mat-toolbar>
-    <mat-toolbar-row class="row between-xs">
-        ma furer
-    </mat-toolbar-row>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h4>Escríbenos</h4>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <mat-form-field>
+      <label for="inputEmail"></label>
+      <input
+        matInput
+        type="email"
+        [formControl]="email"
+        placeholder="Escribe tu correo electrónico"
+      />
+    </mat-form-field>
+    <button mat-raised-button [disabled]="email.valid" (click)="submit()">
+      Enviar
+    </button>
+  </mat-toolbar-row>
 </mat-toolbar>

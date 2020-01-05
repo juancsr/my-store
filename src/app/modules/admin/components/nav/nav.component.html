@@ -8,8 +8,8 @@
       <a mat-list-item routerLink="/admin/create" routerLinkActive="router-link-active" >
         Crear producto
       </a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item [routerLink]="['/admin/products']" routerLinkActive="router-link-active" >Productos</a>
+      <a mat-list-item [routerLink]="['/admin/create-product']" routerLinkActive="router-link-active" >Crear producto 2</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

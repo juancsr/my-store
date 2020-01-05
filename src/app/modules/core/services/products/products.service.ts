@@ -1,35 +1,32 @@
 import { Injectable } from '@angular/core';
 import { ProductModel } from '../../../shared/models/product.model';
+import { HttpClient } from '@angular/common/http';
 
+import { environment } from '../../../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  productos: ProductModel[] = [
-    {
-      Id: 1,
-      Nombre: 'Producto 1',
-      Precio: 45.0,
-      FechaCompra: new Date('10-01-2020'),
-      Descripcion: 'este es un muy buen precio'
-    },
-    {
-      Id: 2,
-      Nombre: 'Producto 2',
-      Precio: 5000,
-      FechaCompra: new Date('12-12-2019'),
-      Descripcion: 'este es un muy buen producto'
-    }
-  ];
-
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getAllProducts() {
-    return this.productos;
+    return this.http.get<ProductModel[]>(environment.products_api);
   }
 
-  getProductById(id: number) {
-    return this.productos.find(item => id === item.Id);
+  getProductById(id: string) {
+    return this.http.get<ProductModel>(`${environment.products_api}${id}`);
+  }
+
+  creteProduct(product: ProductModel) {
+    return this.http.post<ProductModel>(`${environment.products_api}`, product);
+  }
+
+  updateProduct(id: string, changes: Partial<ProductModel>) {
+    return this.http.put<ProductModel>(`${environment.products_api}${id}`, changes);
+  }
+
+  deleteProduct(id: string) {
+    return this.http.delete(`${environment.products_api}${id}`);
   }
 }
