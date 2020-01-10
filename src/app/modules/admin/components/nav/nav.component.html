@@ -10,6 +10,7 @@
       </a>
       <a mat-list-item [routerLink]="['/admin/products']" routerLinkActive="router-link-active" >Productos</a>
       <a mat-list-item [routerLink]="['/admin/create-product']" routerLinkActive="router-link-active" >Crear producto 2</a>
+      <button mat-list-item (click)="logout()">Cerrar sesión</button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

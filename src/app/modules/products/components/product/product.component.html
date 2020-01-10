@@ -9,5 +9,6 @@
     </div>
     <mat-card-actions>
         <button mat-raised-button color="primary" [routerLink]="['/products', producto.id]" routerLinkActive="router-link-active">Ver detalle</button>
+        <button mat-raised-button (click)="addCart()">Agregar al carrito</button>
     </mat-card-actions>
 </mat-card>

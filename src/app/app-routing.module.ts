@@ -24,13 +24,15 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        // component: HomeComponent
         loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
       },
       {
         path: 'contact',
-        canActivate: [AdminGuard],
         loadChildren: () => import('./modules/contact/contact.module').then(m => m.ContactModule)
+      },
+      {
+        path: 'order',
+        loadChildren: () => import('./modules/order/order.module').then(m => m.OrderModule)
       },
       {
         path: 'demo',
@@ -39,7 +41,12 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'auth',
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
     path: 'admin',
+    canActivate: [AdminGuard],
     loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
   },
   {

@@ -27,7 +27,7 @@ export class ProductDetailComponent implements OnInit {
 
   fetchProduct(id: string) {
     // tslint:disable-next-line: radix
-    this.productService.getProductById(parseInt(id)).subscribe(product => {
+    this.productService.getProductById(id).subscribe(product => {
       this.product = product;
     });
   }
