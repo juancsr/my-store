@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProductsService } from './services/products/products.service';
-import { SharedModule } from '../shared/shared.module';
+import { RandomUsersService  } from './services/random-users/random-users.service';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [],
@@ -11,6 +12,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   providers: [
     ProductsService,
+    RandomUsersService,
     SharedModule
   ]
 })
