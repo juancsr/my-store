@@ -6,7 +6,7 @@
             <a mat-button routerLink="/contact" routerLinkActive="acng tive">Contact</a>
             <a mat-button routerLink="/demo" routerLinkActive="active">Demo</a>
         </nav>
-        <a mat-raised-button matBadge="total$ | async" matBadgeColor="warn" routerLink="['/order']" routerLinkActive="router-link-active" >
+        <a mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn" routerLink="['/order']" routerLinkActive="router-link-active" >
             Carrito<i class="material-icons">shopping_cart</i>
         </a>
     </mat-toolbar-row>

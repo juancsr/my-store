@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ProductComponent } from './components/product/product.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { ProductsComponent } from './components/products/products.component';
+import { ProductsContainer } from './containers/products/products.container';
 
 import { ProductsRoutingModule } from './products-routing.module';
 
@@ -14,7 +14,7 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     ProductComponent,
     ProductDetailComponent,
-    ProductsComponent
+    ProductsContainer
   ],
   imports: [
     ProductsRoutingModule,
